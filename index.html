@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Coding Bootcamp Testimonials Slider</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    .pattern-bg {
+      display: flex;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      z-index: 0;
+
+      background-image: url("./images/pattern-bg.svg");
+      background-repeat: no-repeat;
+      width: 697px;
+      height: 657px;
+      left: 600px;
+    }
+
+    #person {
+      z-index: 1;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      width: 70%;
+    }
+
+    .card {
+      position: relative;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 90%;
+      height: 70%;
+      border-width: 1px;
+      border-color: hsl(240, 18%, 77%);
+      justify-content: center;
+      align-items: center;
+      margin: 60px;
+    }
+
+    #paragraph {
+      position: relative;
+      display: inline-block;
+      width: 1000px;
+      right: 450px;
+      font-size: 25px;
+    }
+
+    .icons {
+      position: relative;
+      z-index: 2;
+      right: 500px;
+      top: 200px;
+      display: flex;
+      flex-direction: row;
+      border-radius: 50px;
+      background-color: hsl(240, 38%, 20%);
+      width: 200px;
+      height: 25px;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    let index = 0;
+    let images = ["images/image-tanya.jpg", "images/image-john.jpg"]
+    let quotes = ["“ I’ve been interested in coding for a while but never taken the jump, until now. I couldn’t recommend this course enough. I’m now in the job of my dreams and so excited about the future. ”  Tanya Sinclair UX Engineer", " If you want to lay the best foundation possible I’d recommend taking this course.The depth the instructors go into is incredible. I now feel so confident about starting up as a professional developer. John Tarkpor Junior Front-end Developer"]
+    console.log(images)
+    prev();
+    function prev() {
+      document.getElementById("person").src = images[0];
+      document.getElementById("paragraph").innerHTML = quotes[0]
+    }
+    function next() {
+      document.getElementById("person").src = images[1];
+      document.getElementById("paragraph").innerHTML = quotes[1]
+    }
+  </script>
+  <div class="card">
+    <div class="pattern-bg">
+      <p id="paragraph"></p>
+      <img src="" id="person" alt="">
+      <div class="icons">
+
+        <input type="image" src="images/icon-prev.svg" onclick="prev()" />
+        <input type="image" src="images/icon-next.svg" onclick="next()" />
+
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+
+</html>
